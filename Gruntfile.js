@@ -13,7 +13,8 @@ module.exports = function(grunt) {
     less: {
         
             options: {
-              paths: ['html']
+              paths: ['html'],
+              globalVars: 'html/less/variable.less'
             },
             // target name
              src: {
@@ -21,7 +22,7 @@ module.exports = function(grunt) {
                  expand: true,
                  cwd:    "html/less",
                  src:    ['*.less', '!{boot,var,mix}*.less'],
-                 dest: "html/css",
+                 dest: 'html/css',
                  ext:    ".css"
              }
             
@@ -76,8 +77,8 @@ module.exports = function(grunt) {
     //grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks("grunt-jsbeautifier");
-    grunt.loadNpmTasks("grunt-contrib-cssmin");
+   grunt.loadNpmTasks("grunt-contrib-cssmin");
    // grunt.loadNpmTasks("grunt-contrib-watch");
 
-    grunt.registerTask('default', ['less','jsbeautifier','cssmin']);
+    grunt.registerTask('default', ['less']);
 };
