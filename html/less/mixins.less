@@ -1,0 +1,157 @@
+@import "variable.less";
+.box-shadow (@x: 0px, @y: 2px, @blur: 6px, @alpha: 0.3) {
+    -webkit-box-shadow: 2px 1px 15px -4px rgba(0,0,0,.2); 
+    box-shadow: 2px 1px 15px -4px rgba(0,0,0,.2);
+}
+
+.section-gradient(@from: @lightgrey, @to: @white) {
+    background-color: @to;
+    background-image: -webkit-gradient(linear, top, bottom, from(@from),  to(@to));
+    background-image: -webkit-linear-gradient(top, @from, @to);
+    background-image: -moz-linear-gradient(top, @from, @to);
+    background-image: -o-linear-gradient(top, @from, @to);
+    background-image: -ms-linear-gradient(top, @from, @to);
+    background-image: linear-gradient(top, @from, @to);
+}
+
+.button-gradient {
+    background: -webkit-gradient(linear,top,bottom,from(@red),to(@red 15rem));
+    background: -webkit-linear-gradient(top,@red,@red 15rem);
+    background: -moz-linear-gradient(top,@red,@red 15rem);
+    background: -o-linear-gradient(top,@red,@red 15rem);
+    background: -ms-linear-gradient(top,@red,@red 15rem);
+    background: linear-gradient(top,@red,@red 15rem);
+}
+
+/************************************/
+/* Buttons & links Styling Starts */
+/************************************/
+
+button:focus {
+    outline: 0;
+}
+.button_red {
+    width: 131px;
+    height: 45px;
+    position: relative;
+    background: @red;
+    border: none;
+    font-size: 15px;  
+    color: @white;
+    margin: 1rem 0;
+    padding: .3rem 1rem;
+    border-radius: 0;      
+    cursor: pointer;
+    -webkit-transition: background-color 0.28s ease, color 0.28s ease;
+    transition: background-color 0.28s ease, color 0.28s ease;
+    overflow: hidden;
+   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/
+
+    span { 
+        color: @white;
+        position: relative;
+        z-index: 1;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background: @darkred;
+        border: 50vh solid @darkred;
+        width: 30vh;
+        height: 30vh;
+        border-radius: 50%;
+        display: block;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    &:hover {
+        border: 2px solid @red;
+        background-color: transparent;
+        
+
+        span {
+            color:@black;
+            text-transform: capitalize;
+            font-weight: 12px;
+        }
+    }
+
+    &:active::before,
+    &:focus::before {
+        -webkit-transition: opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+        transition: opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+        transition: transform 1.12s ease, opacity 0.28s ease 0.364s;
+        transition: transform 1.12s ease, opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.button_white {
+    width: 131px;
+    height: 45px;
+    position: relative;
+    background: 0 0;
+    border: thin solid @white;
+    font-size: 14px;
+    color: @white;
+    margin: 0;
+    padding: .3rem 1rem;
+    border-radius: 0;
+    cursor: pointer;
+    -webkit-transition: background-color .28s ease,color .28s ease;
+    transition: background-color .28s ease,color .28s ease;
+    overflow: hidden;
+
+    span { 
+        color: @white;
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover {
+        color: @red;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+/*link with red underline & animation on hover */
+.cta--red_text {
+    font-size:.92rem;
+    color:@red;
+    font-family: 'OpenSansR';
+    font-weight: 400;
+    .section-gradient (@red, @red 15rem);
+      background-position: 0 100%;
+      background-repeat: repeat-x;
+      background-size: 4px 4px;
+      color: @black;
+      text-decoration: none;
+      transition: background-size .5s;
+      padding: 9px;
+  
+      &:hover {
+        background-size: 4px 50px;
+        color: @white;
+        text-decoration: none;
+      }
+  }
+  

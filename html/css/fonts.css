@@ -1,0 +1,48 @@
+/*---------------------------------------------
+1. embedding fonts
+---------------------------------------------*/
+@font-face {
+    font-family: 'fontawesome';
+    src: url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fa-brands';
+    src: url('../fonts/fa-brands-400.woff') format('woff'), url('../fonts/fa-brands-400.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansB';
+    font-weight: 600;
+    src: url('../fonts/opensans/OpenSans-Bold.woff') format('woff'), url('../fonts/opensans/OpenSans-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansR';
+    font-weight: 400;
+    src: url('../fonts/opensans/OpenSans-Regular.woff') format('woff'), url('../fonts/opensans/OpenSans-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansS';
+    font-weight: 500;
+    src: url('../fonts/opensans/OpenSans-Semibold.woff') format('woff'), url('../fonts/opensans/OpenSans-Semibold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansL';
+    font-weight: 300;
+    src: url('../fonts/opensans/OpenSans-Light.woff') format('woff'), url('../fonts/opensans/OpenSans-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
