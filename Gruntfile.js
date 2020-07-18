@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                  // no need for files, the config below should work
                  expand: true,
                  cwd:    "html/less",
-                 src:    ['*.less', '!{boot,var,mix}*.less'],
+                 src:    ['*.less', '!{boot,var,mix,parti}*.less'],
                  dest: 'html/css',
                  ext:    ".css"
              }
@@ -80,5 +80,5 @@ module.exports = function(grunt) {
    grunt.loadNpmTasks("grunt-contrib-cssmin");
    // grunt.loadNpmTasks("grunt-contrib-watch");
 
-    grunt.registerTask('default', ['less']);
+    grunt.registerTask('default', ['less','jsbeautifier','cssmin']);
 };
